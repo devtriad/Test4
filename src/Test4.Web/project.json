@@ -1,19 +1,16 @@
 ﻿{
-  "userSecretsId": "aspnet-Test4.Web-3bbbca90-7d52-41e1-9fbb-6d1a99eed332",
+  "userSecretsId": "aspnet-Mars.Web-d698e426-bd82-463e-9cf5-d30960909b3f",
 
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    },
+
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
+      "type": "build",
+      "version": "1.0.0-preview2-final"
     },
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
@@ -42,11 +39,14 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "Microsoft.AspNetCore.Session": "1.0.0",
+    "Microsoft.Extensions.Caching.Memory": "1.0.0",
+    "System.Linq.Dynamic": "1.0.6",
+    "Mars": "1.0.0-*"
   },
 
   "tools": {
-    "BundlerMinifier.Core": "2.0.238",
     "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
     "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
@@ -60,17 +60,15 @@
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [
-        "dotnet5.6",
-        "portable-net45+win8"
-      ]
-    }
+    "net452": {}
   },
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "copyToOutput": {
+      "include": [ "appsettings.json" ]
+    }
   },
 
   "runtimeOptions": {
@@ -83,10 +81,11 @@
     "include": [
       "wwwroot",
       "Views",
-      "Areas/**/Views",
+      "Areas",
       "appsettings.json",
       "web.config"
-    ]
+    ],
+    "exclude": [ "**.user", "**.vspscc", "**.cs", "bin" ]
   },
 
   "scripts": {
